@@ -2,7 +2,6 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import React from "react";
 import { useTranslation } from "react-i18next";
-import i18n from "../../i18n";
 
 const Header = () => {
   const { i18n, t } = useTranslation(["common"]);
@@ -10,7 +9,7 @@ const Header = () => {
     if (localStorage.getItem("i18nextLng")?.length > 2) {
       i18n.changeLanguage("en");
     }
-  }, []);
+  }, [i18n]);
   const handleLanguageChange = (e) => {
     i18n.changeLanguage(e.target.value);
   };
